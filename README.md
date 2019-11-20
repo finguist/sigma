@@ -1,0 +1,2 @@
+# sigma
+Universal syllable FST
