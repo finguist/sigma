@@ -12,6 +12,32 @@ def open_config(config_filename=DEFAULT_CONFIG_FILENAME):
         config_options = yaml.safe_load(fin)
         return config_options
 
+def make_fst(config):
+
+    FST.define("a|e|i|o|u", "V")
+    FST.define("m|n", "N")
+
+    FST.define("N|P|L", "C")
+
+    ...
+
+    FST.define('~$[ "[" C C "]O" ]', "NoComplexOnsets")
+
+    if not config["complex_onsets_allowed"]:
+        FST.define("GEN .O. NoComplexOnsets", "GEN")
+
+
+    
+    if not config["codas_allowed"]:
+
+        make_me_a_constraint(' "]C" ')
+        FST.define('~$[ "]C" ]', "NoCodas")
+        FST.define("GEN .O. NoCodas", "GEN")
+        for i in range(1,5):
+            FST.define('~$[ "]C" ]>' + str(i), "NoCodas")
+            FST.define("GEN .O. NoCodas", "GEN")
+
+
 
 if __name__ == "__main__":
     config = open_config()
