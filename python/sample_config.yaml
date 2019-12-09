@@ -1,0 +1,43 @@
+### Types of permissible segments ###
+## Onsets ##
+
+special_onset: False
+
+### Nucleus ##
+
+nucleus_vowel: True
+nucleus_nasal: False
+nucleus_approximant: False
+nucleus_sonorant: False
+nucleus_fricative: False
+nucleus_affricate: False
+nucleus_plosive: False
+nucleus_obstruent: False
+nucleus_consonant: False
+
+special_nucleus: False
+
+## Coda ##
+
+coda_nasal: True
+coda_approximant: True
+coda_sonorant: True
+coda_fricative: True
+coda_affricate: True
+coda_plosive: True
+coda_obstruent: True
+coda_consonant: True
+
+special_coda: False
+
+
+
+
+
+# onsets_required: True
+# complex_onsets: True
+
+# ## Codas
+
+# codas_allowed: True
+# coda_size: 1
